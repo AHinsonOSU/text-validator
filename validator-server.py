@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import re
+import uvicorn
 
 app = FastAPI()
 
@@ -61,3 +61,9 @@ def validate(req: ValidationRequest):
         "valid": len(failed_rules) == 0,
         "failed_rules": failed_rules
     }
+
+#
+# Handle the uvicorn calls in the code itself.
+#
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
