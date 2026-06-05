@@ -2,11 +2,11 @@
 
 To prepare to use this microservice, you'll have to 'pip install -r installs.txt'
 
-Once that happens you'll use 'uvicorn validator-server:app --reload'
+Once that happens you'll use 'python text-validator.py'
 
 To call this microservice, simply send a post request to the port, uvicorn automatically chooses port 8000.
 
-If you wish to specify another port, then when you're starting up the service use: 'uvicorn validator-server:app --port xyz --reload'
+If you wish to specify another port, then change the uvicorn init at the bottom of the file to the new port.
 
 The microservice intakes a json object with a string, an array of banned characters, and a boolean on if you want to check for potential injection.
 
